@@ -5,16 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAB - Sabah Adventist Mission | OneVoice27</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: { onevoice: { glow: '#d946ef', darkest: '#080112' } }
-                }
-            }
+            theme: { extend: { colors: { onevoice: { glow: '#d946ef', darkest: '#080112' } } } }
         }
     </script>
     <style>
@@ -27,133 +21,198 @@
         .slide.active { opacity: 1; }
     </style>
 </head>
-<body class="antialiased bg-white dark:bg-[#010410] text-gray-900 dark:text-white transition-colors duration-300 pb-[80px] md:pb-0 md:pr-[14.2857%] overflow-x-hidden min-h-screen">
+<body class="antialiased bg-white dark:bg-[#010410] text-gray-900 dark:text-white transition-colors duration-300 md:pr-[14.2857%] overflow-x-hidden min-h-screen">
 
-    <aside class="fixed z-[100] flex flex-row md:flex-col items-center justify-center md:justify-start md:pt-12 bg-[#712551] bottom-0 left-0 w-full h-[80px] border-t border-gray-300 dark:border-transparent md:top-0 md:bottom-auto md:left-auto md:right-0 md:h-screen md:w-[14.2857%] shadow-lg">
-        <div class="text-white text-center flex md:flex-col items-center gap-4 md:gap-3 opacity-95">
-            <img src="Assets/images/logo/adventist-symbol--white.png" alt="Adventist Symbol" class="w-64 h-64 object-contain drop-shadow-md mix-blend-screen" />
-        </div>
+    <!-- Sidebar (Desktop Only) -->
+    <aside class="fixed z-[100] hidden md:flex md:flex-col items-center justify-start md:pt-12 bg-[#712551] top-0 right-0 h-screen w-[14.2857%] shadow-lg">
+        <img src="Assets/images/logo/adventist-symbol--white.png" alt="Adventist Symbol" class="w-24 h-24 object-contain drop-shadow-md mix-blend-screen" />
     </aside>
 
-    <div class="relative h-[33vh] min-h-[400px] w-full overflow-visible flex flex-col z-20">
-        <div class="w-full bg-white/80 dark:bg-black/50 backdrop-blur-md border-b border-gray-200 dark:border-white/10 relative z-50">
-            <nav class="flex items-center justify-between px-6 md:px-8 py-4 max-w-7xl mx-auto w-full">
-                <div class="flex items-center gap-3 cursor-pointer group">
-                    <div class="w-10 h-10 bg-gray-200 dark:bg-white/10 rounded-full flex items-center justify-center border border-gray-300 dark:border-white/20">
-                        <!-- Visible only in Light Mode -->
-						<img src="Assets/images/logo/adventist-symbol--black.png" alt="SAB Logo" class="w-10 h-10 object-contain block dark:hidden" />
-						
-						<!-- Visible only in Dark Mode -->
-						<img src="Assets/images/logo/adventist-symbol--white.png" alt="SAB Logo" class="w-10 h-10 object-contain hidden dark:block" />
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="font-bold text-[13px] leading-[1.1]">Seventh-day<br />Adventist Church</span>
-                        <span class="text-[9px] font-bold text-[#712551] dark:text-cyan-400 uppercase tracking-[0.15em] mt-0.5">Sabah Mission</span>
-                    </div>
-                </div>
+    <!-- Navigation Bar -->
+    <div class="w-full bg-white/80 dark:bg-black/50 backdrop-blur-md border-b border-gray-200 dark:border-white/10 relative z-50">
+        <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto w-full">
+    <!-- Logo -->
+    <div class="flex items-center gap-3 cursor-pointer group">
+        <div class="w-10 h-10 bg-gray-200 dark:bg-white/10 rounded-full flex items-center justify-center border border-gray-300 dark:border-white/20">
+            <img src="Assets/images/logo/adventist-symbol--black.png" alt="SAB Logo" class="w-10 h-10 object-contain block dark:hidden" />
+            <img src="Assets/images/logo/adventist-symbol--white.png" alt="SAB Logo" class="w-10 h-10 object-contain hidden dark:block" />
+        </div>
+        <div class="flex flex-col">
+            <span class="font-bold text-[13px] leading-[1.1]">Seventh-day<br />Adventist Church</span>
+            <span class="text-[9px] font-bold text-[#712551] dark:text-cyan-400 uppercase tracking-[0.15em] mt-0.5">Sabah Mission</span>
+        </div>
+    </div>
 
-                <div class="hidden lg:flex items-center gap-8 text-sm font-medium">
-                    <div class="relative group">
-                        <button class="flex items-center gap-1.5 py-2 hover:text-[#d946ef] transition">Beliefs <svg class="w-4 h-4 text-gray-500 group-hover:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-                        <div class="absolute left-0 top-full w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-50">
-                            <div class="h-4 w-full"></div> 
-                            <div class="bg-white dark:bg-[#080112] border border-gray-200 dark:border-gray-800 rounded-xl p-2 shadow-xl"><a href="https://hope.study/" class="block px-4 py-2 hover:text-[#d946ef]">Study The Bible</a></div>
-                        </div>
-                    </div>
-                    <div class="relative group">
-                        <button class="flex items-center gap-1.5 py-2 hover:text-[#d946ef] transition">Departments <svg class="w-4 h-4 text-gray-500 group-hover:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-                        <div class="absolute left-1/2 -translate-x-1/2 top-full w-[600px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-50">
-                            <div class="h-4 w-full"></div>
-                            <div class="bg-white dark:bg-[#080112] border border-gray-200 dark:border-[#d946ef]/30 rounded-xl shadow-2xl p-6">
-                                <div class="grid grid-cols-3 gap-6">
-                                    <div><h4 class="text-xs font-bold text-gray-400 uppercase mb-3">Leadership</h4><a href="https://adventistsabah.org/officer/" class="block py-1 hover:text-[#712551] dark:hover:text-[#22d3ee]">Officers & Directors</a></div>
-                                    <div><h4 class="text-xs font-bold text-gray-400 uppercase mb-3">Admin</h4><a href="https://adventistsabah.org/business-department/" class="block py-1 hover:text-[#712551] dark:hover:text-[#22d3ee]">Business Dept</a><a href="https://adventistsabah.org/office-personal/" class="block py-1 hover:text-[#712551] dark:hover:text-[#22d3ee]">Secretaries & Staff</a></div>
-                                    <div><h4 class="text-xs font-bold text-gray-400 uppercase mb-3">Field</h4><a href="https://adventistsabah.org/field-pastors/" class="block py-1 hover:text-[#712551] dark:hover:text-[#22d3ee]">Field Pastors</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="https://adventistsabah.org/news/" class="py-2 hover:text-[#d946ef] transition">News</a>
-                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition">
-                        <span class="dark:hidden">🌙</span>
-                        <span class="hidden dark:inline">☀️</span>
-                    </button>
+    <!-- Desktop Menu Links (WITH DROPDOWNS) -->
+    <div class="hidden lg:flex items-center gap-8 text-sm font-medium">
+        <!-- 1. Beliefs Dropdown -->
+        <div class="relative group">
+            <button class="flex items-center gap-1.5 py-2 hover:text-[#d946ef] transition">Beliefs <svg class="w-4 h-4 text-gray-500 group-hover:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+            <div class="absolute left-0 top-full w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-50">
+                <div class="h-4 w-full"></div> 
+                <div class="bg-white dark:bg-[#080112] border border-gray-200 dark:border-gray-800 rounded-xl p-2 shadow-xl">
+                    <a href="https://hope.study/" class="block px-4 py-2 hover:text-[#d946ef]">Study The Bible</a>
                 </div>
-            </nav>
+            </div>
         </div>
 
+        <!-- 2. Departments Dropdown -->
+        <div class="relative group">
+            <button class="flex items-center gap-1.5 py-2 hover:text-[#d946ef] transition">Departments <svg class="w-4 h-4 text-gray-500 group-hover:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+            <div class="absolute left-1/2 -translate-x-1/2 top-full w-[600px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-50">
+                <div class="h-4 w-full"></div>
+                <div class="bg-white dark:bg-[#080112] border border-gray-200 dark:border-[#d946ef]/30 rounded-xl shadow-2xl p-6">
+                    <div class="grid grid-cols-3 gap-6">
+                        <div><h4 class="text-xs font-bold text-gray-400 uppercase mb-3">Leadership</h4><a href="https://adventistsabah.org/officer/" class="block py-1 hover:text-[#712551] dark:hover:text-[#22d3ee]">Officers & Directors</a></div>
+                        <div><h4 class="text-xs font-bold text-gray-400 uppercase mb-3">Admin</h4><a href="https://adventistsabah.org/business-department/" class="block py-1 hover:text-[#712551] dark:hover:text-[#22d3ee]">Business Dept</a><a href="https://adventistsabah.org/office-personal/" class="block py-1 hover:text-[#712551] dark:hover:text-[#22d3ee]">Secretaries & Staff</a></div>
+                        <div><h4 class="text-xs font-bold text-gray-400 uppercase mb-3">Field</h4><a href="https://adventistsabah.org/field-pastors/" class="block py-1 hover:text-[#712551] dark:hover:text-[#22d3ee]">Field Pastors</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://adventistsabah.org/news/" class="py-2 hover:text-[#d946ef] transition">News</a>
+        <a href="#" class="text-[#712551] dark:text-[#22d3ee] font-bold">Online Report</a>
+        
+        <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+            <span class="dark:hidden">🌙</span>
+            <span class="hidden dark:inline">☀️</span>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="lg:hidden text-2xl p-2">☰</button>
+</nav>
+    </div>
+
+   <!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[200] bg-white dark:bg-[#080112] hidden">
+    <!-- This wrapper forces the content to center properly -->
+    <div class="flex flex-col items-center justify-center h-full gap-8 text-xl font-bold">
+        <button id="close-btn" class="absolute top-6 right-6 text-3xl">✕</button>
+        
+        <a href="#" class="hover:text-[#d946ef]">Beliefs</a>
+        <a href="#" class="hover:text-[#d946ef]">Departments</a>
+        <a href="#" class="hover:text-[#d946ef]">News</a>
+        <a href="#" class="text-[#712551] dark:text-[#22d3ee]">Online Report</a>
+        
+        <button id="theme-toggle-mobile" class="px-6 py-2 border border-gray-300 dark:border-gray-700 rounded-full text-lg">
+            Toggle Theme
+        </button>
+    </div>
+</div>
+
+    <!-- Hero Banner -->
+    <div class="relative h-[33vh] min-h-[400px] w-full flex flex-col z-20">
         <div class="slide active"><img src="Assets/images/slides/satu.png" class="w-full h-full object-cover" /></div>
         <div class="slide"><img src="Assets/images/slides/dua.png" class="w-full h-full object-cover" /></div>
-        <div class="slide"><img src="Assets/images/slides/tiga.png" class="w-full h-full object-cover" /></div>
-        <div class="slide"><img src="Assets/images/slides/empat.png" class="w-full h-full object-cover" /></div>
-
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/20 dark:via-[#010410]/60 to-white dark:to-[#010410] z-10"></div>
         <div class="relative z-20 flex flex-col items-center justify-end h-full text-center px-4 pb-16">
-            <img src="Assets/images/ENG-logo12.png" alt="OneVoice27 Logo" class="w-full max-w-[400px] h-auto object-contain mb-2 drop-shadow-lg" />
+            <img src="Assets/images/ENG-logo12.png" alt="Logo" class="w-full max-w-[300px] h-auto object-contain mb-2 drop-shadow-lg" />
         </div>
-
         <div class="wave-container z-10">
             <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,60 C150,120 350,0 600,60 C850,120 1050,0 1200,60 C1350,120 1550,0 1800,60 C2050,120 2250,0 2400,60 L2400,120 L0,120 Z" class="glowing-path"></path></svg>
         </div>
     </div>
 
-    <div class="relative w-full pt-16 pb-12 bg-white dark:bg-[#010410]">
-        <div class="max-w-6xl mx-auto px-6 md:px-12">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-                <div class="lg:col-span-2">
-                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-base md:text-lg font-light mb-8">Welcome to the online home for the Sabah Mission of Seventh-day Adventists! Sabah Mission Headquarters is the coordinating hub of the Adventist Church in Sabah Mission. We exist to help people in Sabah and the Federal Territory of Labuan understand the Bible to find freedom, healing and hope in Jesus Christ. Thank you for checking out our site.</p>
-                    <div class="w-full rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-md"><img src="Assets/images/office.png" alt="Sabah Mission Headquarters" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity" /></div>
-                </div>
-                <div class="lg:col-span-1 bg-gray-50 dark:bg-[#080112] border border-gray-200 dark:border-[#06b6d4]/40 rounded-2xl p-8 shadow-sm dark:shadow-none relative overflow-hidden group">
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Beliefs</h3>
-                    <div class="w-12 h-1 bg-[#d946ef] mb-6 rounded-full"></div>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed relative z-10">Seventh-day Adventist beliefs are meant to permeate your whole life. Growing out of scriptures that paint a compelling portrait of God, you are invited to explore, experience and know the One who desires to make us whole.</p>
-                    <a href="#" class="inline-block mt-8 text-[#d946ef] text-sm font-semibold hover:text-gray-900 dark:hover:text-white transition-colors">Discover More &rsaquo;</a>
-                </div>
-            </div>
+<div class="relative w-full pb-32 pt-12 bg-white dark:bg-[#010410] transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+        
+        <div class="mb-12">
+            <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white border-l-4 border-[#d946ef] pl-4">Latest News</h2>
         </div>
-    </div>
 
-    <div class="relative w-full pb-32 pt-12 bg-gray-50 dark:bg-[#010410]">
-        <div class="max-w-6xl mx-auto px-6 md:px-12">
-            <div class="mb-12"><h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white border-l-4 border-[#d946ef] pl-4">Latest News</h2></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group bg-white dark:bg-[#080112] border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:border-[#d946ef]/50 hover:shadow-lg transition-all duration-300 flex flex-col">
-                    <div class="relative h-48 overflow-hidden"><img src="Assets/images/newleadership.png" alt="Leadership Meeting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"><div class="absolute top-4 left-4 bg-[#712551] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Administration</div></div>
-                    <div class="p-6 flex flex-col flex-grow"><p class="text-gray-500 text-xs font-medium mb-2">Dec 17, 2024</p><h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-[#d946ef] transition-colors leading-snug">New Leadership for Sabah Mission Approved</h3><a href="#" class="text-[#d946ef] text-xs font-semibold hover:text-gray-900 dark:hover:text-white transition-colors border border-[#d946ef]/30 px-4 py-2 rounded-full inline-block self-start">Read More &rsaquo;</a></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Card Structure -->
+            <div class="group bg-white dark:bg-[#080112] border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:border-[#d946ef]/50 hover:shadow-lg dark:hover:shadow-[0_0_30px_rgba(217,70,239,0.15)] transition-all duration-300 flex flex-col">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="Assets/images/newleadership.png" alt="Leadership Meeting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-4 left-4 bg-[#0e7490] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Administration</div>
                 </div>
-                <div class="group bg-white dark:bg-[#080112] border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:border-[#d946ef]/50 hover:shadow-lg transition-all duration-300 flex flex-col"><div class="relative h-48 overflow-hidden"><img src="Assets/images/piak.png" alt="Media Training Group" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"><div class="absolute top-4 left-4 bg-[#d946ef] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Training</div></div><div class="p-6 flex flex-col flex-grow"><p class="text-gray-500 text-xs font-medium mb-2">Sep 27-29, 2024</p><h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-[#d946ef] transition-colors leading-snug">Media Training Held at PIAK</h3><a href="#" class="text-[#d946ef] text-xs font-semibold hover:text-gray-900 dark:hover:text-white transition-colors border border-[#d946ef]/30 px-4 py-2 rounded-full inline-block self-start">Read More &rsaquo;</a></div></div>
-                <div class="group bg-white dark:bg-[#080112] border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:border-[#d946ef]/50 hover:shadow-lg transition-all duration-300 flex flex-col"><div class="relative h-48 overflow-hidden"><img src="Assets/images/legacyoffaith.png" alt="Book Launch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"><div class="absolute top-4 left-4 bg-[#712551] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Publishing</div></div><div class="p-6 flex flex-col flex-grow"><p class="text-gray-500 text-xs font-medium mb-2">Recent Event</p><h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-[#d946ef] transition-colors leading-snug">"From Pioneer to Present" Book Launch</h3><a href="#" class="text-[#d946ef] text-xs font-semibold hover:text-gray-900 dark:hover:text-white transition-colors border border-[#d946ef]/30 px-4 py-2 rounded-full inline-block self-start">Read More &rsaquo;</a></div></div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <p class="text-gray-500 dark:text-gray-400 text-xs font-medium mb-2">Dec 17, 2024</p>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-[#d946ef] transition-colors leading-snug">New Leadership for Sabah Mission Approved During Seventh-day Adventist Year-End Meeting</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 flex-grow line-clamp-3">Sabah Mission of Seventh-day Adventist Hari dengan sukacitanya mengumumkan bahawa kepimpinan baharu bagi Sabah Mission telah diluluskan pada hari ini, Selasa, 17 Disember 2024, semasa mesyuarat akhir tahun yang diadakan di ibu pejabat di Tamparuli</p>
+                    <a href="#" class="text-[#d946ef] text-xs font-semibold hover:text-gray-900 dark:hover:text-white transition-colors border border-[#d946ef]/30 px-4 py-2 rounded-full inline-block self-start">Read More &rsaquo;</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="group bg-white dark:bg-[#080112] border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:border-[#d946ef]/50 hover:shadow-lg dark:hover:shadow-[0_0_30px_rgba(217,70,239,0.15)] transition-all duration-300 flex flex-col">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="Assets/images/piak.png" alt="Media Training Group" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-4 left-4 bg-[#d946ef] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Training</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <p class="text-gray-500 dark:text-gray-400 text-xs font-medium mb-2">Sep 27-29, 2024</p>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-[#d946ef] transition-colors leading-snug">Media Training Held at PIAK with Hands-On and Practical Skills</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 flex-grow line-clamp-3">Dari 27-29 September 2024, acara Latihan Media telah berlangsung di Pusat Istirahat Advent Kundasang (PIAK), mengumpulkan peserta yang bersemangat untuk meningkatkan kemahiran media mereka. Manakala 70 peserta telah didaftarkan, 56 peserta telah hadir...</p>
+                    <a href="#" class="text-[#d946ef] text-xs font-semibold hover:text-gray-900 dark:hover:text-white transition-colors border border-[#d946ef]/30 px-4 py-2 rounded-full inline-block self-start">Read More &rsaquo;</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="group bg-white dark:bg-[#080112] border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:border-[#d946ef]/50 hover:shadow-lg dark:hover:shadow-[0_0_30px_rgba(217,70,239,0.15)] transition-all duration-300 flex flex-col">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="Assets/images/legacyoffaith.png" alt="Book Launch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-4 left-4 bg-[#0e7490] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Publishing</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <p class="text-gray-500 dark:text-gray-400 text-xs font-medium mb-2">Recent Event</p>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-[#d946ef] transition-colors leading-snug">"From Pioneer to Present" Book Launch: Legacy of Faith</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 flex-grow line-clamp-3">Sebuah buku yang mendalami kerja-kerja penginjilan Adventist di awal 1800-an, mengongsikan cabaran dan keberanian para pekerja rohani dalam penyebaran ajaran agama di Borneo...</p>
+                    <a href="#" class="text-[#d946ef] text-xs font-semibold hover:text-gray-900 dark:hover:text-white transition-colors border border-[#d946ef]/30 px-4 py-2 rounded-full inline-block self-start">Read More &rsaquo;</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="group bg-white dark:bg-[#080112] border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:border-[#d946ef]/50 hover:shadow-lg dark:hover:shadow-[0_0_30px_rgba(217,70,239,0.15)] transition-all duration-300 flex flex-col">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="Assets/images/womenconvention2024.png" alt="Women's Convention" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-4 left-4 bg-[#d946ef] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Women's Ministries</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <p class="text-gray-500 dark:text-gray-400 text-xs font-medium mb-2">July 26-28, 2024</p>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-[#d946ef] transition-colors leading-snug">Women's Ministries Convention 2024: Flourishing Together for Mission</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 flex-grow line-clamp-3">From July 26 to 28, 2024, the Palace Hotel in Kota Kinabalu buzzed with fresh energy of women coming together for a cause greater than themselves. The Women's Ministries Convention brought together a diverse group of 665 delegates...</p>
+                    <a href="#" class="text-[#d946ef] text-xs font-semibold hover:text-gray-900 dark:hover:text-white transition-colors border border-[#d946ef]/30 px-4 py-2 rounded-full inline-block self-start">Read More &rsaquo;</a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="group bg-white dark:bg-[#080112] border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:border-[#d946ef]/50 hover:shadow-lg dark:hover:shadow-[0_0_30px_rgba(217,70,239,0.15)] transition-all duration-300 flex flex-col lg:col-span-1 md:col-span-2 lg:col-start-2">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="Assets/images/legacyoffaith.png" alt="Revelation of Hope" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-4 left-4 bg-[#0e7490] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Evangelism</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <p class="text-gray-500 dark:text-gray-400 text-xs font-medium mb-2">August 18-25, 2023</p>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-[#d946ef] transition-colors leading-snug">Hope For Sabah: "Revelation Of Hope"</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 flex-grow line-clamp-3">We are very excited to invite you all to join us in "Hope for Sabah," a meeting that will surely change your life! This meeting will start from 18 to 25 August 2023 and will be held at several venues throughout Sabah.</p>
+                    <a href="#" class="text-[#d946ef] text-xs font-semibold hover:text-gray-900 dark:hover:text-white transition-colors border border-[#d946ef]/30 px-4 py-2 rounded-full inline-block self-start">Read More &rsaquo;</a>
+                </div>
             </div>
         </div>
     </div>
-	
-	<footer class="relative w-full bg-gray-100 dark:bg-[#080112] border-t border-gray-200 dark:border-gray-800 pt-16 pb-8 text-gray-600 dark:text-gray-400">
-        <div class="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            <div><h4 class="text-gray-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">About SAB</h4><ul class="space-y-3 text-sm"><li><a href="#" class="hover:text-[#d946ef] transition">Vision and Mission</a></li><li><a href="#" class="hover:text-[#d946ef] transition">History of Sabah Mission</a></li><li><a href="#" class="hover:text-[#d946ef] transition">Our Church</a></li></ul></div>
-            <div><h4 class="text-gray-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Resources & Ministry</h4><ul class="space-y-3 text-sm"><li><a href="#" class="hover:text-[#d946ef] transition">Beliefs</a></li><li><a href="#" class="hover:text-[#d946ef] transition">Study The Bible</a></li><li><a href="#" class="hover:text-[#d946ef] transition">Departments</a></li></ul></div>
-            <div><h4 class="text-gray-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Administration</h4><ul class="space-y-3 text-sm"><li><a href="#" class="hover:text-[#d946ef] transition">Officers & Directors</a></li><li><a href="#" class="hover:text-[#d946ef] transition">Business Department</a></li><li><a href="#" class="hover:text-[#d946ef] transition font-bold text-[#712551] dark:text-[#22d3ee]">ONLINE REPORT</a></li></ul></div>
-        </div>
-        <div class="max-w-6xl mx-auto px-6 md:px-12 border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
-            <p>© 2026 Sabah Seventh-day Adventist Mission.</p>
-            <div class="flex gap-6 mt-4 md:mt-0"><a href="#" class="hover:text-gray-900 dark:hover:text-white transition">Find a Church</a><a href="#" class="hover:text-gray-900 dark:hover:text-white transition">Contact Us</a></div>
-        </div>
-    </footer>
+</div>
 
     <script>
-        const toggleBtn = document.getElementById('theme-toggle');
-        toggleBtn.onclick = () => {
-            document.documentElement.classList.toggle('dark');
-        };
-
+        // Theme
+        const toggleTheme = () => document.documentElement.classList.toggle('dark');
+        document.getElementById('theme-toggle').onclick = toggleTheme;
+        document.getElementById('theme-toggle-mobile').onclick = toggleTheme;
+        // Mobile Menu
+        document.getElementById('menu-btn').onclick = () => document.getElementById('mobile-menu').classList.remove('hidden');
+        document.getElementById('close-btn').onclick = () => document.getElementById('mobile-menu').classList.add('hidden');
+        // Slides
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
-        function nextSlide() {
+        setInterval(() => {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
-        }
-        setInterval(nextSlide, 5000);
+        }, 5000);
     </script>
 </body>
 </html>
