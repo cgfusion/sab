@@ -29,7 +29,7 @@
     </aside>
 
     <!-- Navigation Bar -->
-    <div class="w-full bg-white/80 dark:bg-black/50 backdrop-blur-md border-b border-gray-200 dark:border-white/10 relative z-50">
+    <div class="w-full bg-transparent backdrop-blur-sm border-b border-white/20 dark:border-white/10 relative z-50">
         <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto w-full">
     <!-- Logo -->
     <div class="flex items-center gap-3 cursor-pointer group">
@@ -50,7 +50,7 @@
             <button class="flex items-center gap-1.5 py-2 hover:text-[#d946ef] transition">Beliefs <svg class="w-4 h-4 text-gray-500 group-hover:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
             <div class="absolute left-0 top-full w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-50">
                 <div class="h-4 w-full"></div> 
-                <div class="bg-white dark:bg-[#080112] border border-gray-200 dark:border-gray-800 rounded-xl p-2 shadow-xl">
+                <div class="bg-white/90 dark:bg-[#080112]/90 backdrop-blur-md border border-gray-200 dark:border-gray-800 rounded-xl p-2 shadow-xl">
                     <a href="https://hope.study/" class="block px-4 py-2 hover:text-[#d946ef]">Study The Bible</a>
                 </div>
             </div>
@@ -61,7 +61,7 @@
             <button class="flex items-center gap-1.5 py-2 hover:text-[#d946ef] transition">Departments <svg class="w-4 h-4 text-gray-500 group-hover:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
             <div class="absolute left-1/2 -translate-x-1/2 top-full w-[600px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-50">
                 <div class="h-4 w-full"></div>
-                <div class="bg-white dark:bg-[#080112] border border-gray-200 dark:border-[#d946ef]/30 rounded-xl shadow-2xl p-6">
+                <div class="bg-white/90 dark:bg-[#080112]/90 backdrop-blur-md border border-gray-200 dark:border-[#d946ef]/30 rounded-xl shadow-2xl p-6">
                     <div class="grid grid-cols-3 gap-6">
                         <div><h4 class="text-xs font-bold text-gray-400 uppercase mb-3">Leadership</h4><a href="https://adventistsabah.org/officer/" class="block py-1 hover:text-[#712551] dark:hover:text-[#22d3ee]">Officers & Directors</a></div>
                         <div><h4 class="text-xs font-bold text-gray-400 uppercase mb-3">Admin</h4><a href="https://adventistsabah.org/business-department/" class="block py-1 hover:text-[#712551] dark:hover:text-[#22d3ee]">Business Dept</a><a href="https://adventistsabah.org/office-personal/" class="block py-1 hover:text-[#712551] dark:hover:text-[#22d3ee]">Secretaries & Staff</a></div>
@@ -85,27 +85,63 @@
 </nav>
     </div>
 
-   <!-- Mobile Menu Overlay -->
-<div id="mobile-menu" class="fixed inset-0 z-[200] bg-white dark:bg-[#080112] hidden">
-    <!-- This wrapper forces the content to center properly -->
-    <div class="flex flex-col items-center justify-center h-full gap-8 text-xl font-bold">
-        <button id="close-btn" class="absolute top-6 right-6 text-3xl">✕</button>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[200] bg-white dark:bg-[#080112] hidden flex-col p-8 overflow-y-auto">
+    <!-- Close Button -->
+    <button id="close-btn" class="absolute top-6 right-6 text-3xl dark:text-white">✕</button>
+
+    <div class="flex flex-col gap-8 mt-16 text-gray-900 dark:text-white">
         
-        <a href="#" class="hover:text-[#d946ef]">Beliefs</a>
-        <a href="#" class="hover:text-[#d946ef]">Departments</a>
-        <a href="#" class="hover:text-[#d946ef]">News</a>
-        <a href="#" class="text-[#712551] dark:text-[#22d3ee]">Online Report</a>
-        
-        <button id="theme-toggle-mobile" class="px-6 py-2 border border-gray-300 dark:border-gray-700 rounded-full text-lg">
-            Toggle Theme
-        </button>
+        <!-- Beliefs Section -->
+        <div class="space-y-3">
+            <h3 class="text-[#d946ef] font-bold uppercase text-xs tracking-widest">Beliefs</h3>
+            <a href="https://hope.study/" class="block text-xl font-semibold">Study The Bible</a>
+        </div>
+
+        <!-- Departments Section -->
+        <div class="space-y-4">
+            <h3 class="text-[#d946ef] font-bold uppercase text-xs tracking-widest">Departments</h3>
+            
+            <div class="space-y-2">
+                <h4 class="text-sm font-semibold text-gray-500 uppercase">Leadership</h4>
+                <a href="https://adventistsabah.org/officer/" class="block text-lg">Officers & Directors</a>
+            </div>
+            
+            <div class="space-y-2">
+                <h4 class="text-sm font-semibold text-gray-500 uppercase">Admin</h4>
+                <a href="https://adventistsabah.org/business-department/" class="block text-lg">Business Dept</a>
+                <a href="https://adventistsabah.org/office-personal/" class="block text-lg">Secretaries & Staff</a>
+            </div>
+            
+            <div class="space-y-2">
+                <h4 class="text-sm font-semibold text-gray-500 uppercase">Field</h4>
+                <a href="https://adventistsabah.org/field-pastors/" class="block text-lg">Field Pastors</a>
+            </div>
+        </div>
+
+        <!-- Utility Links -->
+        <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col gap-6">
+            <a href="https://adventistsabah.org/news/" class="text-xl font-bold">News</a>
+            <a href="#" class="text-xl font-bold text-[#712551] dark:text-[#22d3ee]">Online Report</a>
+            
+            <button id="theme-toggle-mobile" class="w-full border border-gray-300 dark:border-gray-700 py-3 rounded-full font-bold">
+                Toggle Dark/Light Mode
+            </button>
+        </div>
     </div>
 </div>
 
     <!-- Hero Banner -->
     <div class="relative h-[33vh] min-h-[400px] w-full flex flex-col z-20">
-        <div class="slide active"><img src="Assets/images/slides/satu.png" class="w-full h-full object-cover" /></div>
-        <div class="slide"><img src="Assets/images/slides/dua.png" class="w-full h-full object-cover" /></div>
+	    <div class="absolute inset-0 -z-10">
+            <img src="Assets/images/glowing-wave.png" class="w-full h-full object-cover object-top opacity-90" />
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#010410]/60 to-[#010410]"></div>
+        </div>
+		<div class="slide active"></div>
+<div class="slide"><img src="Assets/images/slides/satu.png" class="w-full h-full object-cover" /></div>
+    <div class="slide"><img src="Assets/images/slides/dua.png" class="w-full h-full object-cover" /></div>
+    <div class="slide"><img src="Assets/images/slides/tiga.png" class="w-full h-full object-cover" /></div>
+    <div class="slide"><img src="Assets/images/slides/empat.png" class="w-full h-full object-cover" /></div>
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/20 dark:via-[#010410]/60 to-white dark:to-[#010410] z-10"></div>
         <div class="relative z-20 flex flex-col items-center justify-end h-full text-center px-4 pb-16">
             <img src="Assets/images/ENG-logo12.png" alt="Logo" class="w-full max-w-[300px] h-auto object-contain mb-2 drop-shadow-lg" />
@@ -196,7 +232,55 @@
         </div>
     </div>
 </div>
+<footer class="relative w-full bg-gray-100 dark:bg-[#080112] border-t border-gray-200 dark:border-gray-800 pt-16 pb-8 text-gray-600 dark:text-gray-400 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        
+        <!-- Column 1 -->
+        <div>
+            <h4 class="text-gray-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">About SAB</h4>
+            <ul class="space-y-3 text-sm">
+                <li><a href="#" class="hover:text-[#d946ef] transition">Vision and Mission</a></li>
+                <li><a href="#" class="hover:text-[#d946ef] transition">History of Sabah Mission</a></li>
+                <li><a href="#" class="hover:text-[#d946ef] transition">Our Church</a></li>
+                <li><a href="#" class="hover:text-[#d946ef] transition">Why You Should Get To Know Seventh-day Adventists</a></li>
+            </ul>
+        </div>
 
+        <!-- Column 2 -->
+        <div>
+            <h4 class="text-gray-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Resources & Ministry</h4>
+            <ul class="space-y-3 text-sm">
+                <li><a href="#" class="hover:text-[#d946ef] transition">Beliefs</a></li>
+                <li><a href="#" class="hover:text-[#d946ef] transition">Study The Bible</a></li>
+                <li><a href="#" class="hover:text-[#d946ef] transition">Departments</a></li>
+                <li><a href="#" class="hover:text-[#d946ef] transition">e-Book & Newsletter</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div>
+            <h4 class="text-gray-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Administration</h4>
+            <ul class="space-y-3 text-sm">
+                <li><a href="#" class="hover:text-[#d946ef] transition">Officers & Departmental Directors</a></li>
+                <li><a href="#" class="hover:text-[#d946ef] transition">Business Department</a></li>
+                <li><a href="#" class="hover:text-[#d946ef] transition">Office Secretaries & Support Staff</a></li>
+                <li><a href="#" class="hover:text-[#d946ef] transition">Field Pastors</a></li>
+                <li><a href="#" class="hover:text-[#d946ef] font-bold dark:text-[#22d3ee]">ONLINE REPORT</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="max-w-6xl mx-auto px-6 md:px-12 border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+        <p>© 2026 Sabah Seventh-day Adventist Mission.</p>
+        <div class="flex gap-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-gray-900 dark:hover:text-white transition">Find a Church</a>
+            <a href="#" class="hover:text-gray-900 dark:hover:text-white transition">Contact Us</a>
+            <a href="#" class="hover:text-gray-900 dark:hover:text-white transition">Facebook</a>
+            <a href="#" class="hover:text-gray-900 dark:hover:text-white transition">Youtube</a>
+        </div>
+    </div>
+</footer>
     <script>
         // Theme
         const toggleTheme = () => document.documentElement.classList.toggle('dark');
