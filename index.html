@@ -14,9 +14,27 @@
     <style>
         .wave-container { position: absolute; bottom: -1px; left: 0; width: 100%; overflow: hidden; line-height: 0; }
         .wave-svg { position: relative; display: block; width: calc(200% + 1.3px); height: 80px; animation: flowWave 12s linear infinite; }
-        .glowing-path { fill: #ffffff; stroke: #d946ef; stroke-width: 4px; }
-        .dark .glowing-path { fill: #010410; }
-        @keyframes flowWave { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+        .glowing-path {
+            fill: #FFFFFF; /* Transition color to next section */
+            stroke: #d946ef; /* Magenta Glow */
+            stroke-width: 4px;
+            /* Signature OneVoice glow */
+            filter: drop-shadow(0px -4px 10px rgba(217, 70, 239, 0.7)) drop-shadow(0px 0px 30px rgba(217, 70, 239, 0.4));
+        }
+        .dark .glowing-path {
+            fill: #010410; /* Transition color to next section */
+            stroke: #d946ef; /* Magenta Glow */
+            stroke-width: 4px;
+            /* Signature OneVoice glow */
+            filter: drop-shadow(0px -4px 10px rgba(217, 70, 239, 0.7)) drop-shadow(0px 0px 30px rgba(217, 70, 239, 0.4));
+        }
+
+
+
+        @keyframes flowWave {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
         .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 2s ease-in-out; }
         .slide.active { opacity: 1; }
     </style>
@@ -147,7 +165,8 @@
             <img src="Assets/images/ENG-logo12.png" alt="Logo" class="w-full max-w-[300px] h-auto object-contain mb-2 drop-shadow-lg" />
         </div>
         <div class="wave-container z-10">
-            <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,60 C150,120 350,0 600,60 C850,120 1050,0 1200,60 C1350,120 1550,0 1800,60 C2050,120 2250,0 2400,60 L2400,120 L0,120 Z" class="glowing-path"></path></svg>
+            <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+			<path d="M0,60 C150,120 350,0 600,60 C850,120 1050,0 1200,60 C1350,120 1550,0 1800,60 C2050,120 2250,0 2400,60 L2400,120 L0,120 Z" class="glowing-path"></path></svg>
         </div>
     </div>
 
